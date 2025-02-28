@@ -20,7 +20,7 @@ buttons.forEach(button => {
 // Start Tool Script
 const fileInput = document.getElementById("file-input");
 const dropUpload = document.getElementById("file-drop-upload");
-const fileResolution = document.getElementById("file-resolution")
+const fileResolution = document.getElementById("file-resolution");
 
 function processFile(file){
     if(!file || !file.type.startsWith("image/")) {
@@ -32,8 +32,8 @@ function processFile(file){
     img.src = URL.createObjectURL(file);
 
     img.onload = function() {
-        fileResolution.textContent = `Resolution: ${img.width} x ${img.height}`
-        URL.revokeObjectURL(img.src)
+        fileResolution.textContent = `Resolution: ${img.width} x ${img.height}`;
+        URL.revokeObjectURL(img.src);
     };
 
     img.onerror = function() {
@@ -42,7 +42,7 @@ function processFile(file){
 }
 
 fileInput.addEventListener("change", function(event) {
-    if(fileInput.length > 1) {
+    if(fileInput.files.length > 1) {
         alert("You can only upload one image.");
         fileInput.value = "";
         return;
@@ -68,7 +68,7 @@ dropUpload.addEventListener("drop", function(event) {
         return;
     }
 
-    processFile(fileInput.files[0]);
+    processFile(files[0]);
 });
 
 dropUpload.addEventListener("click", function(event) {
