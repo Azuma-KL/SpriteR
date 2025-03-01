@@ -224,7 +224,7 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50%;
+    height: calc(50vh - 40px);
     width: 100%;
 }
 
@@ -248,11 +248,6 @@ footer p {
     align-items: center;
 }
 
-.tool-info {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
 .tool-info svg {
     fill: #ecf0f1;
@@ -260,17 +255,27 @@ footer p {
 
 .tool-instructions {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     padding: 20px;
     height: 75%;
     width: 75%;
     font-size: 18pt;
     color: #ecf0f1;
-    list-style: dot;
     background-color: #291b5364;
 }
 
-
+.settings-list {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
 
 .image-results-box {
     height: 100vh;
@@ -278,7 +283,65 @@ footer p {
     background-color: #717171;
 }
 
+/* Start Tool Dropdown Menu CSS */
 
+.dropdown-menu {
+    position: relative;
+    display: inline-block;
+}
 
+.dropdown-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ced3d4;
+    background: none;
+    border: 2px solid #291b53;
+    font-family: inherit;
+    font-size: 18pt;
+    padding: 0px 20px;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.dropdown-menu-content {
+    display: none;
+    position: absolute;
+    background-color: #291b53;
+    min-width: 100%;
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-menu-content a {
+    color: #ecf0f1;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu-content a:hover {
+    background-color: #412b85;
+}
+
+.dropdown-menu:hover .dropdown-menu-content {
+    display: block;
+}
+
+/* End Tool Dropdown Menu CSS */
+
+.checkbox-setting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+    gap: 20px;
+}
+
+#grid-setting {
+    height: 25px;
+    width: 25px;
+}
 
 /* End Tool CSS */
